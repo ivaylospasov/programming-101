@@ -1,0 +1,37 @@
+Python is an awesome language!
+You should try it.
+
+Also, you can use Python at a lot of different places!
+
+Python is an awesome language!
+You should try it.
+
+Also, you can use Python at a lot of different places!
+
+Python is an awesome language!
+You should try it.
+
+Also, you can use Python at a lot of different places!
+
+Python is an awesome language!
+You should try it.
+
+Also, you can use Python at a lot of different places!
+
+Pending tasks
+==========
+
+1-Python-simple-problems-set
+- Matrix bombing
+
+2-Python-harder-problems-set
+- Fibonacci lists
+- Is member of nth fibonacci lists
+
+3-Python-file-system-problems
+- No pending tasks :)
+
+
+Python is an awesome language!
+You should try it.
+
