@@ -17,6 +17,8 @@ class Panda:
         return "Nomm nomm nomm!"
 
 
-dimcho = Panda("Dimcho", 10, 1500)
+dimcho = Panda("Dimcho", 10, 999)
 print(dimcho.age)  # 10
+print(dimcho.weight)
 print(dimcho.eat_bamboo())  # "Nomm nomm nomm!"
+print(dimcho.weight)
