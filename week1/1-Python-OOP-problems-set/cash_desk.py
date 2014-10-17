@@ -24,13 +24,15 @@ class CashDesk:
 
     def can_withdraw_money(self, amount):
         copy_available_money = copy.deepcopy(self.money)
+        print(copy_available_money)
+        print(amount)
         for note in sorted(copy_available_money.keys(), reverse=True):
             while copy_available_money[note] > 0 and amount - note >= 0:
                 amount -= note
                 copy_available_money[note] -= 1
-        if amount > 0:
-            return False
-        return True
+        if amount == 0:
+            return True
+        return False
 
 
 def main():
@@ -42,7 +44,7 @@ def main():
 
     print(my_cash_desk.can_withdraw_money(100))
 
-    print(my_cash_desk.can_withdraw_money(270))
+    print(my_cash_desk.can_withdraw_money(250))
 
 
 if __name__ == '__main__':
