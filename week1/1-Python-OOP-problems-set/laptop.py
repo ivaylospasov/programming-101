@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+
 class Product(object):
 
     def __init__(self, name, stock_price, final_price):
