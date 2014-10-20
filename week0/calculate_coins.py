@@ -15,10 +15,3 @@ def calculate_coins(sum):
                 sum -= coin
                 break
     return change
-
-
-def main():
-    print(calculate_coins(8.94))
-
-if __name__ == '__main__':
-    main()

@@ -20,7 +20,7 @@ def reduce_file_path(path):
 
 
 def main():
-    print(reduce_file_path("/home//radorado/code/../tasks/./hackbulgaria/week0/../"))
+    print(reduce_file_path("/home//radorado/code/../tasks/"))
 
 if __name__ == '__main__':
     main()
