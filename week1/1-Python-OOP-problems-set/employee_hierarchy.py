@@ -17,13 +17,13 @@ class HourlyEmployee(Employee):
 
 class SalariedEmployee(Employee):
 
-    def __init__(self, sirname, name, work_hours):
-        super().__init__(sirname, name, work_hours)
+    def __init__(self, sirname, name, salary):
+        super().__init__(sirname, name)
 
 
-class Manager(Employee):
-    def __init__(self, sirname, name, work_hours):
-        super().__init__(sirname, name, work_hours)
+class Manager(SalariedEmployee):
+    def __init__(self, sirname, name, salary, bonus):
+        super().__init__(sirname, name, salary)
 
 
 def main():
