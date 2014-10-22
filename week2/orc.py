@@ -11,3 +11,12 @@ class Orc(Entity):
             self.berserk_factor = berserk_factor
         else:
             raise ValueError
+
+        def attack(self):
+            if not self.has_weapon():
+                self.damage = 0
+                print(self.damage)
+            else:
+                self.damage = self.weapon_inventory['weapon']['damage'] * self.__set_selfberserk_factor(berserk_factor)
+                print(self.damage)
+            return self.damage

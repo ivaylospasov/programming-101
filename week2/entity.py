@@ -7,7 +7,7 @@ class Entity:
         self.name = name
         self.health = health
         self._MAX_HEALTH = health
-        self.weapon = {}
+        self.weapon_inventory = {}
 
     def get_health(self):
         return self.health
@@ -33,10 +33,20 @@ class Entity:
         return True
 
     def has_weapon(self):
-        if len(self.weapon) > 0:
-            return True
-        return False
+        if len(self.weapon_inventory) == 0:
+            return False
+        return True
 
     def equip_weapon(self, weapon):
         if isinstance(weapon, Weapon):
-            self.weapon['weapon'] = Weapon.type
+            self.weapon_inventory['weapon'] = {'type': weapon.type,
+                                               'damage': weapon.damage,
+                                               'csp': weapon.csp}
+        return self.weapon_inventory
+
+    def attack(self):
+        if not self.has_weapon():
+            damage = 0
+        else:
+            damage = self.weapon_inventory['weapon']['damage']
+        return damage

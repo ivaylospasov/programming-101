@@ -3,13 +3,13 @@ from random import random
 
 class Weapon:
 
-    def __init__(self, type, damage, critical_strike_percent):
+    def __init__(self, type, damage, csp):
         self.type = type
         self.damage = damage
-        self.critical_strike_percent = critical_strike_percent
+        self.csp = csp
 
     def critical_hit(self):
         random_number = random()
-        if random_number > self.critical_strike_percent:
+        if random_number > self.csp:
             return False
         return True

@@ -2,6 +2,8 @@ import unittest
 
 import entity
 
+from weapon import Weapon
+
 
 class EntityTest(unittest.TestCase):
 
@@ -26,7 +28,7 @@ class EntityTest(unittest.TestCase):
     def test_entity_take_damage_float(self):
         self.assertEqual(self.some_entity.take_damage(29.5), 70.5)
 
-    def test_entity_take_damage_to_death(self):
+    def test_entity_take_damage_over_death_entity(self):
         self.assertEqual(self.some_entity.take_damage(150), 0)
 
     def test_entity_take_healing_of_the_dead_entity(self):
@@ -39,6 +41,30 @@ class EntityTest(unittest.TestCase):
     def test_it_entity_has_no_weapon(self):
         self.assertFalse(self.some_entity.has_weapon())
 
+    def test_if_entity_has_weapon(self):
+        weapon = Weapon("Mighty Axe", 25, 0.2)
+        self.some_entity.equip_weapon(weapon)
+        self.assertTrue(self.some_entity.has_weapon())
+
+    def test_equip_weapon(self):
+        weapon = Weapon("Mighty Axe", 25, 0.2)
+        self.assertEqual(self.some_entity.equip_weapon(weapon),
+                         {'weapon': {'type': 'Mighty Axe', 'damage': 25, 'csp': 0.2}})
+
+    def test_equip_with_another_weapon(self):
+        weapon = Weapon("Mighty Axe", 25, 0.2)
+        self.some_entity.equip_weapon(weapon)
+        weapon = Weapon("Magic Sword", 20, 0.3)
+        self.assertEqual(self.some_entity.equip_weapon(weapon),
+                         {'weapon': {'type': 'Magic Sword', 'damage': 20, 'csp': 0.3}})
+
+    def test_attack_with_no_weapon(self):
+        self.assertEqual(self.some_entity.attack(), 0)
+
+    def test_attack_with_weapon(self):
+        weapon = Weapon("Mighty Axe", 25, 0.2)
+        self.some_entity.equip_weapon(weapon)
+        self.assertEqual(self.some_entity.attack(), 25)
 
 if __name__ == '__main__':
     unittest.main()
