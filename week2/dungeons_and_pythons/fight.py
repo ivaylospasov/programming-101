@@ -26,7 +26,7 @@ class Fight():
             attaker = self.orc
             attaked = self.hero
 
-        while self.orc.is_alive() and self.hero.is_alive():
+        while self.orc.is_alive() or self.hero.is_alive():
             damage = attaker.attack()
             attaker.take_damage(damage)
             attaked.take_damage(damage)
